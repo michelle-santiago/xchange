@@ -1,5 +1,22 @@
-<div>
-  <h1 class="font-bold text-4xl">Portfolios#index</h1>
-  <p>Find me in app/views/portfolios/index.html.erb</p>
-  <%= link_to "Add stock", new_portfolio_path %>
-</div>
+<% content_for :main_content do %>
+
+<%= candlestick_chart({
+    '2017-10-24' => [20, 34, 10, 38],
+    '2017-10-25' => [40, 35, 30, 50],
+    '2017-10-26' => [31, 38, 33, 44],
+    '2017-10-27' => [38, 15, 5, 42]
+  },
+  class: 'box',
+  theme: 'roma',
+  options: {
+    xAxis: {
+      axisTick: {
+        alignWithLabel: true
+      }
+    }
+  })
+%>
+
+
+<% end %>
+
