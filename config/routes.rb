@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :portfolios
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -17,4 +17,7 @@ Rails.application.routes.draw do
       resources :users
     end
 
+  get '/portfolios' => 'portfolios#index'
+  get '/portfolios/show' => 'portfolios#show', as: 'show_portfolio'
+ 
 end
